@@ -206,28 +206,4 @@ namespace MyApp.Presentation
 
 
 
-using Microsoft.Extensions.DependencyInjection;
-using MyApp.Application;
-using MyApp.Domain;
-using MyApp.Infrastructure;
-using MyApp.Presentation;
-
-namespace MyApp
-{
-    public class Program
-    {
-        static void Main(string[] args)
-        {
-            var serviceProvider = new ServiceCollection()
-                .AddSingleton<ICustomerRepository, CustomerRepository>()
-                .AddSingleton<ICustomerService, CustomerService>()
-                .AddTransient<ConsoleUI>()
-                .BuildServiceProvider();
-
-            // Run the Application
-            var consoleUI = serviceProvider.GetService<ConsoleUI>();
-            consoleUI?.Run();
-        }
-    }
-}
 
