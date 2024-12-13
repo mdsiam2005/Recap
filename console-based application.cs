@@ -206,7 +206,6 @@ namespace MyApp.Presentation
 
 
 
-// --- Main Program ---
 using Microsoft.Extensions.DependencyInjection;
 using MyApp.Application;
 using MyApp.Domain;
@@ -219,7 +218,6 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            // Setup Dependency Injection
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<ICustomerRepository, CustomerRepository>()
                 .AddSingleton<ICustomerService, CustomerService>()
